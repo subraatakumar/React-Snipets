@@ -1,6 +1,8 @@
 
-#fetch error from api url
+# fetch error from api url
+
 ~~~javascript
+const [items, setItems] = useState([]);
 const [fetchError, setFetchError] = useState(null);
 
 useEffect(()=>{
