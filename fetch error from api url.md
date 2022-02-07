@@ -4,6 +4,7 @@
 ~~~javascript
 const [items, setItems] = useState([]);
 const [fetchError, setFetchError] = useState(null);
+const [isLoading, setIsLoading] = useState(true); // isLoading is true at beginning
 
 useEffect(()=>{
   const fetchItems = async () => {
@@ -16,8 +17,11 @@ useEffect(()=>{
     } catch(err){
       console.log(err.message);
       setFetchError(err.message);
+    } finally {
+      setIsLoading(false);
     }
   }
+  
   fetchItems();
 },[]) // Loads once at program loading
 ~~~
