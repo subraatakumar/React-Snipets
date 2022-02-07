@@ -21,3 +21,9 @@ useEffect(()=>{
   fetchItems();
 },[]) // Loads once at program loading
 ~~~
+
+## Display fetch error in the desired location
+
+~~~javascript
+{fetchError && <p style={{color: "red"}}>{`Error: ${fetchError}`}</p>}
+~~~
